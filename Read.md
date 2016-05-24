@@ -39,12 +39,12 @@ But there are many easy way to run the linux os in the window so user would be b
 
 Development progress situation
 
-<List of functions I want to add to the program.>
+List of functions I want to add to the program.
 - multi-process (most important, since the process is too slow now...)
 - fantastic UI (making the program so easy to use that even my nine-years-old sister can try running it. not important at all)
 - equation editor (if user had learnt the 'differential and integral calculus' and never gived up, it will be simple to set the equation of the form u want. Even if the form is very complex user can just split it into some easy forms and join them together. But in that way, some problem of the indices can be caused. So it would be better to find a way to convert the form to equation, by 3d camera or somthing.)
 
-<UI>
+UI
 - user can choose the environment either 'open' or 'close'.
 - there are two example simulations 
       setting one end of the metal stick at 100℃ and one end of the metal stick, 0℃  and  other part is 20℃ .
