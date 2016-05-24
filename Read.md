@@ -27,7 +27,6 @@ The copper stick and the iron stick sample object is also in the main module, so
   a = ironstick();
 
 The sample object is just like a experiment metarial, which i used in the 'general physics experiment class' at my school.
-I'm in the dept. of physics in University of Seoul.
 
 #Setting up the environment
 
@@ -49,3 +48,8 @@ But there are many easy way to run the linux os in the window so user would be b
 - there are two example simulations 
       setting one end of the metal stick at 100℃ and one end of the metal stick, 0℃  and  other part is 20℃ .
 - actually the UI is not working properly...
+
+#Developer
+It was just my homework of the visual physics course at my school...
+My e-mail address is 'luysunyoung9@gmail.com'.
+I'm studying at the dept. of physics in University of Seoul.
