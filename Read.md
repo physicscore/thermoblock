@@ -1,4 +1,4 @@
-Overview (what can i do with this?)
+#Overview (what can i do with this?)
 
 This program is for simulating the heat flux of a solid stuff or any stuff....
 It can be used for any material if user update some information of new material and make a form by an equation.
@@ -11,7 +11,7 @@ Basic materials are iron and copper. User can use the information of those two m
 The information of the metarial is from wickipedia of google.
 
 
-Physical Idea of the Program.
+#Physical Idea of the Program.
 The main idea is to split the solid into blocks like lego and calculate the flux between the blocks.
 
 Calcuating mechanism is defined as a method in the 'RObject' class which is the solid object consisting of the blocks.
@@ -29,7 +29,7 @@ The copper stick and the iron stick sample object is also in the main module, so
 The sample object is just like a experiment metarial, which i used in the 'general physics experiment class' at my school.
 I'm in the dept. of physics in University of Seoul.
 
-Setting up the environment
+#Setting up the environment
 
 program language : python
 required module : numpy, vpython, tkinter
@@ -37,14 +37,14 @@ required module : numpy, vpython, tkinter
 There is a 'setup.sh' shell script for setting up your environment of the computer to run the program. User just need to run the shell script by : ./setup.sh, and then user is ready to run the program. (If you can't run it, try : chmod 755 setup.sh) The shell script is for linux os since I'm developing the program with Ubuntu. I don't recommend this program for window user because is very annoying to use vpython with window. 윈도우 극혐...
 But there are many easy way to run the linux os in the window so user would be better to run the program in that way.
 
-Development progress situation
+#Development progress situation
 
-List of functions I want to add to the program.
+###List of functions I want to add to the program.
 - multi-process (most important, since the process is too slow now...)
 - fantastic UI (making the program so easy to use that even my nine-years-old sister can try running it. not important at all)
 - equation editor (if user had learnt the 'differential and integral calculus' and never gived up, it will be simple to set the equation of the form u want. Even if the form is very complex user can just split it into some easy forms and join them together. But in that way, some problem of the indices can be caused. So it would be better to find a way to convert the form to equation, by 3d camera or somthing.)
 
-UI
+###UI
 - user can choose the environment either 'open' or 'close'.
 - there are two example simulations 
       setting one end of the metal stick at 100℃ and one end of the metal stick, 0℃  and  other part is 20℃ .
