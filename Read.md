@@ -33,7 +33,7 @@ The sample object is just like a experiment metarial, which i used in the 'gener
 program language : python /
 required module : numpy, vpython, tkinter
 
-There is a 'setup.sh' shell script for setting up your environment of the computer to run the program. User just need to run the shell script by : ./setup.sh, and then user is ready to run the program. (If you can't run it, try : chmod 755 setup.sh) The shell script is for linux os since I'm developing the program with Ubuntu. I don't recommend this program for window user because is very annoying to use vpython with window. 윈도우 극혐...
+There is a 'setup.sh' shell script for setting up your environment of the computer to run the program. User just need to run the shell script by : ./setup.sh, and then user is ready to run the program. (If you can't run it, try : chmod 755 setup.sh) The shell script is for linux os since I'm developing the program with Ubuntu. I don't recommend this program for window user because it is very annoying to use vpython with window. 윈도우 극혐...
 But there are many easy way to run the linux os in the window so user would be better to run the program in that way.
 
 #Development progress situation
