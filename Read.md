@@ -30,7 +30,7 @@ The sample object is just like a experiment metarial, which i used in the 'gener
 
 #Setting up the environment
 
-program language : python
+program language : python /
 required module : numpy, vpython, tkinter
 
 There is a 'setup.sh' shell script for setting up your environment of the computer to run the program. User just need to run the shell script by : ./setup.sh, and then user is ready to run the program. (If you can't run it, try : chmod 755 setup.sh) The shell script is for linux os since I'm developing the program with Ubuntu. I don't recommend this program for window user because is very annoying to use vpython with window. 윈도우 극혐...
