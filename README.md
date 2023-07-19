@@ -1,12 +1,12 @@
-<!-- [![PyPI badge](http://img.shields.io/pypi/v/thermoblock.svg)](https://pypi.python.org/pypi/thermoblock) -->
-<!-- [![Anaconda-Server Badge](https://anaconda.org/newsun/thermoblock/badges/version.svg)](https://anaconda.org/newsun/thermoblock) -->
+<!-- [![PyPI badge](http://img.shields.io/pypi/v/thermoblock.svg)](https://pypi.python.org/pypi/thermoblock)
+[![Anaconda-Server Badge](https://anaconda.org/physicscore/thermoblock/badges/version.svg)](https://anaconda.org/physicscore/thermoblock) -->
 [![License: BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](LICENSE)
 
 # thermoblock
 
 ## About
 
-Flux simulatino toy building library
+Flux simulation toy building library.
 
 ## Installation
 
@@ -64,7 +64,7 @@ But there are many easy way to run the linux os in the window so user would be b
 
 ### UI
 - user can choose the environment either 'open' or 'close'.
-- there are two example simulations 
+- there are two example simulations
       setting one end of the metal stick at 100℃ and one end of the metal stick, 0℃  and the other part is 20℃ .
 - the UI is not working properly...
 
