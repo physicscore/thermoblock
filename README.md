@@ -1,4 +1,21 @@
-# Legacy Alart‼️
+<!-- [![PyPI badge](http://img.shields.io/pypi/v/thermoblock.svg)](https://pypi.python.org/pypi/thermoblock) -->
+<!-- [![Anaconda-Server Badge](https://anaconda.org/newsun/thermoblock/badges/version.svg)](https://anaconda.org/newsun/thermoblock) -->
+[![License: BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](LICENSE)
+
+# thermoblock
+
+## About
+
+Flux simulatino toy building library
+
+## Installation
+
+```sh
+python -m pip install thermoblock
+```
+
+
+<!-- # Legacy Alart‼️
 This repository is being renovated...! 🚧👷‍♂️ Coming soon!
 
 # What can I do with this?
@@ -54,4 +71,4 @@ But there are many easy way to run the linux os in the window so user would be b
 # Developer
 It was just my homework in the visual physics course at my school...
 My e-mail address is 'luysunyoung9@gmail.com'.
-I'm studying at the dept. of physics at the University of Seoul.
+I'm studying at the dept. of physics at the University of Seoul. -->
