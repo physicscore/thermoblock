@@ -22,7 +22,7 @@ jobs:
 
       - uses: conda-incubator/setup-miniconda@v2
       - run: conda install --yes conda-build
-      - run: conda build --channel conda-forge --channel scipp --python=3.10 --no-anaconda-upload --override-channels --output-folder conda/package conda
+      - run: conda build --channel conda-forge --python=3.10 --no-anaconda-upload --override-channels --output-folder conda/package conda
 
       - uses: actions/upload-artifact@v2
         with:
