@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "thermoblock"
 description = "Flux simulation toy building library."
-authors= [{name="Scipp contributors"}]
+authors= [{name="PhysicsCore contributors"}]
 license = { file = "LICENSE" }
 readme = "README.md"
 classifiers = [
