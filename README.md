@@ -1,5 +1,5 @@
-<!-- [![PyPI badge](http://img.shields.io/pypi/v/thermoblock.svg)](https://pypi.python.org/pypi/thermoblock)
-[![Anaconda-Server Badge](https://anaconda.org/physicscore/thermoblock/badges/version.svg)](https://anaconda.org/physicscore/thermoblock) -->
+[![PyPI badge](http://img.shields.io/pypi/v/thermoblock.svg)](https://pypi.python.org/pypi/thermoblock)
+[![Anaconda-Server Badge](https://anaconda.org/physicscore/thermoblock/badges/version.svg)](https://anaconda.org/physicscore/thermoblock)
 [![License: BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](LICENSE)
 
 # thermoblock
