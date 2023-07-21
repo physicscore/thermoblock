@@ -10,8 +10,8 @@ sys.path.insert(0, os.path.abspath('.'))
 
 # General information about the project.
 project = u'thermoblock'
-copyright = u'2023 Scipp contributors'
-author = u'Scipp contributors'
+copyright = u'2023 PhysicsCore contributors'
+author = u'PhysicsCore contributors'
 
 html_show_sourcelink = True
 
@@ -144,7 +144,7 @@ html_theme_options = {
         },
         {
             "name": "Conda",
-            "url": "https://anaconda.org/conda-forge/thermoblock",
+            "url": "https://anaconda.org/physicscore/thermoblock",
             "icon": "_static/anaconda-logo.svg",
             "type": "local",
         },
