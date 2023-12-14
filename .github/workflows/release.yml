@@ -20,7 +20,7 @@ jobs:
           submodules: true
           fetch-depth: 0  # history required so cmake can determine version
 
-      - uses: conda-incubator/setup-miniconda@v2
+      - uses: conda-incubator/setup-miniconda@v3
       - run: conda install --yes conda-build
       - run: conda build --channel conda-forge --python=3.10 --no-anaconda-upload --override-channels --output-folder conda/package conda
 
@@ -77,7 +77,7 @@ jobs:
 
     steps:
       - uses: actions/download-artifact@v3
-      - uses: conda-incubator/setup-miniconda@v2
+      - uses: conda-incubator/setup-miniconda@v3
         with:
           python-version: '3.10'
 
