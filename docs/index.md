@@ -10,5 +10,7 @@
 hidden:
 ---
 
+api-reference/index
 developer/index
+about/index
 ```

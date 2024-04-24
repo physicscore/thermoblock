@@ -1,4 +1,4 @@
-# Developer documentation
+# Development
 
 ```{include} ../../CONTRIBUTING.md
 ```
@@ -7,9 +7,7 @@
 
 ```{toctree}
 ---
-caption: About
 maxdepth: 2
-hidden:
 ---
 
 getting-started
