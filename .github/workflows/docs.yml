@@ -1,4 +1,3 @@
-
 name: Docs
 
 on:
@@ -30,6 +29,11 @@ on:
         default: ''
         required: false
         type: string
+      linkcheck:
+        description: 'Run the link checker. If not set the link checker will not be run.'
+        default: false
+        required: false
+        type: boolean
 
 env:
   VERSION: ${{ inputs.version }}
@@ -37,30 +41,28 @@ env:
 jobs:
   docs:
     name: Build documentation
-    runs-on: 'ubuntu-20.04'
+    runs-on: 'ubuntu-22.04'
     steps:
-
       - run: sudo apt install --yes graphviz pandoc
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ inputs.branch == '' && github.ref_name || inputs.branch }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
           fetch-depth: 0  # history required so cmake can determine version
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v5
         with:
-
-          python-version: '3.10'
+          python-version-file: '.github/workflows/python-version-ci'
       - run: python -m pip install --upgrade pip
       - run: python -m pip install -r requirements/ci.txt
-      - run: |
-          tox --skip-pkg-install -e docs -- thermoblock==${VERSION}
-
-          echo "target=$(python docs/version.py --version=${VERSION} --action=get-target)" >> $GITHUB_ENV
-        if: ${{ inputs.publish }}
+      - run: tox -e releasedocs -- ${VERSION}
+        if: ${{ inputs.version != '' }}
       - run: tox -e docs
-        if: ${{ !inputs.publish }}
-      - uses: actions/upload-artifact@v3
+        if: ${{ inputs.version == '' }}
+      - run: tox -e linkcheck
+        if: ${{ inputs.linkcheck }}
+      - uses: actions/upload-artifact@v4
         with:
-          name: html
+          name: docs_html
           path: html/
 
       - uses: JamesIves/github-pages-deploy-action@v4.6.0
@@ -68,7 +70,4 @@ jobs:
         with:
           branch: gh-pages
           folder: html
-          target-folder: ${{ env.target }}
           single-commit: true
-          clean-exclude: release
-          ssh-key: ${{ secrets.GH_PAGES_DEPLOY_KEY }}

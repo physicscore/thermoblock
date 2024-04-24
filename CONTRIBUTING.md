@@ -13,3 +13,8 @@ You are welcome to submit pull requests at any time.
 But to avoid having to make large modifications during review or even have your PR rejected, please first open an issue first to discuss your idea!
 
 Check out the subsections of the [Developer documentation](https://physicscore.github.io/thermoblock/developer/index.html) for details on how Thermoblock is developed.
+
+## Code of conduct
+
+This project is a community effort, and everyone is welcome to contribute.
+Everyone within the community is expected to abide by our [code of conduct](https://github.com/physicscore/thermoblock/blob/main/CODE_OF_CONDUCT.md).

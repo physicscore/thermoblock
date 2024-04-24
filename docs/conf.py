@@ -3,13 +3,12 @@
 import doctest
 import os
 import sys
-
-import thermoblock
+from importlib.metadata import version as get_version
 
 sys.path.insert(0, os.path.abspath('.'))
 
 # General information about the project.
-project = u'thermoblock'
+project = u'Thermoblock'
 copyright = u'2023 PhysicsCore contributors'
 author = u'PhysicsCore contributors'
 
@@ -19,15 +18,18 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.doctest',
+    'sphinx.ext.githubpages',
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
     'sphinx.ext.napoleon',
+    'sphinx.ext.viewcode',
     'sphinx_autodoc_typehints',
     'sphinx_copybutton',
-    "sphinx_design",
+    'sphinx_design',
     'nbsphinx',
     'myst_parser',
 ]
+
 
 myst_enable_extensions = [
     "amsmath",
@@ -72,6 +74,7 @@ napoleon_type_aliases = {
 typehints_defaults = 'comma'
 typehints_use_rtype = False
 
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -89,10 +92,8 @@ master_doc = 'index'
 # built documents.
 #
 
-# The short X.Y version.
-version = thermoblock.__version__
-# The full version, including alpha/beta/rc tags.
-release = thermoblock.__version__
+release = get_version("thermoblock")
+version = ".".join(release.split('.')[:3])  # CalVer
 
 warning_is_error = True
 
@@ -120,7 +121,9 @@ html_theme = "pydata_sphinx_theme"
 html_theme_options = {
     "primary_sidebar_end": ["edit-this-page", "sourcelink"],
     "secondary_sidebar_items": [],
+    "navbar_persistent": ["search-button"],
     "show_nav_level": 1,
+    # Adjust this to ensure external links are moved to "Move" menu
     "header_links_before_dropdown": 4,
     "pygment_light_style": "github-light-high-contrast",
     "pygment_dark_style": "github-dark-high-contrast",
@@ -128,7 +131,9 @@ html_theme_options = {
         "image_light": "_static/logo.svg",
         "image_dark": "_static/logo-dark.svg",
     },
-    "external_links": [],
+    "external_links": [
+        {"name": "", "url": "https://physicscore.github.io/"},
+    ],
     "icon_links": [
         {
             "name": "GitHub",
@@ -145,10 +150,12 @@ html_theme_options = {
         {
             "name": "Conda",
             "url": "https://anaconda.org/physicscore/thermoblock",
-            "icon": "_static/anaconda-logo.svg",
-            "type": "local",
+            "icon": "fa-custom fa-anaconda",
+            "type": "fontawesome",
         },
     ],
+    "footer_start": ["copyright", "sphinx-version"],
+    "footer_end": ["doc_version", "theme-version"],
 }
 html_context = {
     "doc_path": "docs",
@@ -157,7 +164,7 @@ html_sidebars = {
     "**": ["sidebar-nav-bs", "page-toc"],
 }
 
-html_title = "thermoblock"
+html_title = "Thermoblock"
 html_logo = "_static/logo.svg"
 html_favicon = "_static/favicon.ico"
 
@@ -165,7 +172,8 @@ html_favicon = "_static/favicon.ico"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-html_css_files = ["css/custom.css"]
+html_css_files = []
+html_js_files = ["anaconda-icon.js"]
 
 # -- Options for HTMLHelp output ------------------------------------------
 
@@ -175,13 +183,34 @@ htmlhelp_basename = 'thermoblockdoc'
 # -- Options for Matplotlib in notebooks ----------------------------------
 
 nbsphinx_execute_arguments = [
-    "--Session.metadata=scipp_docs_build=True",
+    "--Session.metadata=scipp_sphinx_build=True",
 ]
 
 # -- Options for doctest --------------------------------------------------
 
+# sc.plot returns a Figure object and doctest compares that against the
+# output written in the docstring. But we only want to show an image of the
+# figure, not its `repr`.
+# In addition, there is no need to make plots in doctest as the documentation
+# build already tests if those plots can be made.
+# So we simply disable plots in doctests.
 doctest_global_setup = '''
 import numpy as np
+
+try:
+    import scipp as sc
+
+    def do_not_plot(*args, **kwargs):
+        pass
+
+    sc.plot = do_not_plot
+    sc.Variable.plot = do_not_plot
+    sc.DataArray.plot = do_not_plot
+    sc.DataGroup.plot = do_not_plot
+    sc.Dataset.plot = do_not_plot
+except ImportError:
+    # Scipp is not needed by docs if it is not installed.
+    pass
 '''
 
 # Using normalize whitespace because many __str__ functions in scipp produce
