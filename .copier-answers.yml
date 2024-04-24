@@ -1,10 +1,13 @@
 # Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: 14eaf11
+_commit: 6ee5264
 _src_path: gh:scipp/copier_template
 description: Flux simulation toy building library.
-github_linux_image: ubuntu-20.04
-max_python: '3.11'
+max_python: '3.12'
 min_python: '3.10'
+namespace_package: ''
+nightly_deps: ''
 orgname: physicscore
+prettyname: Thermoblock
 projectname: thermoblock
-year: 2023
+related_projects: ''
+year: 2024
